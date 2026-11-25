@@ -1,0 +1,29 @@
+{
+  "name": "legal-registry-agent",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Standalone TypeScript learning project using fictional legal registry records.",
+  "workspaces": [
+    "apps/registry-api",
+    "apps/mcp-server"
+  ],
+  "engines": {
+    "node": "24.21.0",
+    "npm": "11.19.0"
+  },
+  "packageManager": "npm@11.19.0",
+  "scripts": {
+    "db:config": "docker compose config --quiet",
+    "db:up": "docker compose up -d --wait db",
+    "db:status": "docker compose ps db",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  },
+  "allowScripts": {
+    "prisma@7.10.1": true,
+    "@prisma/engines@7.10.1": true
+  }
+}
